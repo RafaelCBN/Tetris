@@ -25,3 +25,5 @@ while True: #loop
     #pygame.draw.rect(tela,(cor),(200,400,100,5))#Chao
 
     pygame.display.update()
+    
+    #organizador de estoque,saida e entrada de carga de caminhoes

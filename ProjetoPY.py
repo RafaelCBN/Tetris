@@ -1,5 +1,4 @@
 import pygame
-import Blocks
 from pygame.locals import * #submodolo
 from sys import exit
 import random
@@ -34,11 +33,11 @@ while True:
     for event in pygame.event.get():
      if event.type == KEYDOWN:
 
-        if event.key == K_LEFT and x >= 60:
+        if event.key == K_LEFT:
             ITS_MOVING_LEFT = True
 
-        if event.key == K_RIGHT and x <= 900:
-            ITS_MOVING = True
+        if event.key == K_RIGHT:
+            ITS_MOVING_RIGHT = True
 
         if event.key == K_UP:
             y = y - 1
@@ -55,11 +54,11 @@ while True:
             ITS_MOVING_LEFT = False
 
         if event.key == K_RIGHT:
-            ITS_MOVING = False
+            ITS_MOVING_RIGHT = False
 
-    if ITS_MOVING_LEFT:
+    if ITS_MOVING_LEFT and x > 10:
         x -= 1/10 
-    if ITS_MOVING_RIGHT:
+    if ITS_MOVING_RIGHT and x < LENGHT - 60:
         x += 1/10
     #-----------------------------X---Y---L--A)
     pygame.draw.rect(screen,(RED),(x,y,50,100))
